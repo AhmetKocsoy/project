@@ -6,6 +6,9 @@ export default function Deneme({ baslik, children }) {
 
     const [metin, setMetin] = useState('');
 
+    const [items, setItems] = useState(['A', 'B']);
+
+
     useEffect(() => {
         setKare(sayi * sayi);
     }, [sayi]);
@@ -25,6 +28,12 @@ export default function Deneme({ baslik, children }) {
           <button onClick={() => setSayi(0)}>Reset</button>
           <br />
           <input value={metin} onChange={e => setMetin(e.target.value)}/>
+          <br />
+          <ul>
+              {items.map(item => (
+                  <li>{item}</li>
+              ))}
+          </ul>
           <br />
           {children}
       </div>
